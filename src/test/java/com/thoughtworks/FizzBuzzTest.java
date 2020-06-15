@@ -9,7 +9,10 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
 
         //when
+        int num = 1;
 
         //then
+
+        
     }
 }
