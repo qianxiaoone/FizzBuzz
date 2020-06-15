@@ -3,6 +3,9 @@ package com.thoughtworks;
 public class FizzBuzz {
     public String say(int num) {
         String result = "";
+        if (String.valueOf(num).contains("3")){
+            return "Fizz";
+        }
         if (num % 3 == 0) {
             result += "Fizz";
         }
