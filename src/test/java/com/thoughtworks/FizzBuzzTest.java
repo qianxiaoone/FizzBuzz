@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class FizzBuzzTest {
     @Test
-    public void shoud_return_1_when_input_1() {
+    public void should_return_1_when_input_1() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -17,7 +17,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_Fizz_when_input_3() {
+    public void should_return_Fizz_when_input_3() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -29,7 +29,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_Buzz_when_input_5() {
+    public void should_return_Buzz_when_input_5() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -41,7 +41,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_FizzBuzz_when_input_15() {
+    public void should_return_FizzBuzz_when_input_15() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -53,7 +53,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_Whizz_when_input_7() {
+    public void should_return_Whizz_when_input_7() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -65,7 +65,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_BuzzWhizz_when_input_70() {
+    public void should_return_BuzzWhizz_when_input_70() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -77,7 +77,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_FizzBuzzWhizz_when_input_105() {
+    public void should_return_FizzBuzzWhizz_when_input_105() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -89,7 +89,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_Fizz_when_input_13() {
+    public void should_return_Fizz_when_input_13() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -101,7 +101,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_Fizz_when_input_30() {
+    public void should_return_Fizz_when_input_30() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -113,7 +113,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shoud_return_BuzzWhizz_when_input_35() {
+    public void should_return_BuzzWhizz_when_input_35() {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
 
@@ -122,5 +122,17 @@ public class FizzBuzzTest {
 
         //then
         Assert.assertEquals("BuzzWhizz", fizzBuzz.say(num));
+    }
+
+    @Test
+    public void should_return_Fizz_when_input_75() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        //when
+        int num = 75;
+
+        //then
+        Assert.assertEquals("Fizz", fizzBuzz.say(num));
     }
 }
