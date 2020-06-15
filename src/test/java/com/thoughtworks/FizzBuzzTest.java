@@ -111,4 +111,16 @@ public class FizzBuzzTest {
         //then
         Assert.assertEquals("Fizz", fizzBuzz.say(num));
     }
+
+    @Test
+    public void shoud_return_BuzzWhizz_when_input_35() {
+        //given
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        //when
+        int num = 35;
+
+        //then
+        Assert.assertEquals("BuzzWhizz", fizzBuzz.say(num));
+    }
 }
