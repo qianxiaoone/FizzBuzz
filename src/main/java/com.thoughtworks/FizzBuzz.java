@@ -1,19 +1,20 @@
 package com.thoughtworks;
 
 public class FizzBuzz {
-   public String say(int num){
-       if (num%15 == 0){
-           return "FizzBuzz";
+    public String say(int num) {
+        String result = "";
+        if (num%3==0){
+            result += "Fizz";
         }
-        if(num%3 == 0){
-            return "Fizz";
+        if (num%5== 0){
+            result += "Buzz";
         }
-        if(num%5 == 0){
-            return "Buzz";
+        if(num%7==0){
+            result += "Whizz";
         }
-        if(num%7 == 0){
-            return "Whizz";
+        if ("".equals(result)){
+            result = String.valueOf(num);
         }
-        return String.valueOf(num);
+        return result;
     }
 }
