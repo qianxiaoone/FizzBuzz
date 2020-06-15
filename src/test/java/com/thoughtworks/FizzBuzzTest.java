@@ -1,5 +1,6 @@
 package com.thoughtworks;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class FizzBuzzTest {
@@ -12,7 +13,7 @@ public class FizzBuzzTest {
         int num = 1;
 
         //then
-
+        Assert.assertEquals("1", fizzBuzz.say(num));
 
     }
 }
