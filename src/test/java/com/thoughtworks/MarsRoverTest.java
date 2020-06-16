@@ -9,7 +9,7 @@ public class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover();
         //when
-        String location = marsRover.execute("00N", "M");
+        String location = marsRover.execute(0,0,"N", "M");
         //then
         Assert.assertEquals("01N",location);
     }
@@ -18,7 +18,7 @@ public class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover();
         //when
-        String location = marsRover.execute("00N", "L");
+        String location = marsRover.execute(0,0,"N", "L");
         //then
         Assert.assertEquals("00W",location);
 
@@ -28,16 +28,37 @@ public class MarsRoverTest {
         //given
         MarsRover marsRover = new MarsRover();
         //when
-        String location = marsRover.execute("00N", "R");
+        String location = marsRover.execute(0,0,"N", "R");
         //then
         Assert.assertEquals("00E",location);
     }
     @Test
-    public void should_return_0n1S_when_input_00S_M(){}
+    public void should_return_0n1S_when_input_00S_M(){
+        //given
+        MarsRover marsRover = new MarsRover();
+        //when
+        String location = marsRover.execute(0,0,"S", "M");
+        //then
+        Assert.assertEquals("0-1S",location);
+    }
     @Test
-    public void should_return_00E_when_input_00S_L(){}
+    public void should_return_00E_when_input_00S_L(){
+        //given
+        MarsRover marsRover = new MarsRover();
+        //when
+        String location = marsRover.execute(0,0,"S", "L");
+        //then
+        Assert.assertEquals("00E",location);
+    }
     @Test
-    public void should_return_00S_when_input_00S_R(){}
+    public void should_return_00W_when_input_00S_R(){
+        //given
+        MarsRover marsRover = new MarsRover();
+        //when
+        String location = marsRover.execute(0,0,"S", "R");
+        //then
+        Assert.assertEquals("00W",location);
+    }
     @Test
     public void should_return_10E_when_input_00E_M(){}
     @Test

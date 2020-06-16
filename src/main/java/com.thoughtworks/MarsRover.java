@@ -1,10 +1,7 @@
 package com.thoughtworks;
 
 public class MarsRover {
-    public String execute(String initCoor, String moveCommand) {
-        int xCoor = Integer.parseInt(initCoor.substring(0, 1));
-        int yCoor = Integer.parseInt(initCoor.substring(1, 2));
-        String direc = initCoor.substring(2, 3);
+    public String execute(int xCoor, int yCoor, String direc, String moveCommand) {
         for (int i = 0; i < moveCommand.length(); i++) {
             String command = String.valueOf(moveCommand.charAt(i));
             if (isDirCommand(command)) {
