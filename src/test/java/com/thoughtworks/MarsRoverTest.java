@@ -36,5 +36,5 @@ public class MarsRoverTest {
     @Test
     public void should_return_00N_when_input_00W_R(){}
     @Test
-    public void should_return_31W_when_input_00N_MMMRM(){}
+    public void should_return_13E_when_input_00N_MMMRM(){}
 }
