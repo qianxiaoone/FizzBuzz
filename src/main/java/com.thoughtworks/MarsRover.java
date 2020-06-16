@@ -1,74 +1,81 @@
 package com.thoughtworks;
 
-public class MarsRover {
+public class MarsRover implements MarsRoverContants {
     public String execute(int xCoor, int yCoor, String direc, String moveCommand) {
+        MarsRoverPosition marsRoverPosition = new MarsRoverPosition(xCoor,yCoor,direc);
         for (int i = 0; i < moveCommand.length(); i++) {
             String command = String.valueOf(moveCommand.charAt(i));
             if (isDirCommand(command)) {
-                direc = turnDirec(direc, command);
+                direc = turnDirec(marsRoverPosition.getDirection(), command);
+                marsRoverPosition.setDirection(direc);
             }
-            if ("N".equals(direc)) {
-                if ("M".equals(command)) {
+            if (NORTH.equals(direc)) {
+                if (MOVEACTION.equals(command)) {
                     yCoor += 1;
+                    marsRoverPosition.setyCoor(yCoor);
                 }
             }
-            if ("S".equals(direc)) {
-                if ("M".equals(command)) {
+            if (SOUTH.equals(direc)) {
+                if (MOVEACTION.equals(command)) {
                     yCoor -= 1;
+                    marsRoverPosition.setyCoor(yCoor);
                 }
             }
-            if ("W".equals(direc)) {
-                if ("M".equals(command)) {
+            if (WEST.equals(direc)) {
+                if (MOVEACTION.equals(command)) {
                     xCoor -= 1;
+                    marsRoverPosition.setxCoor(xCoor);
                 }
             }
-            if ("E".equals(direc)) {
-                if ("M".equals(command)) {
+            if (EAST.equals(direc)) {
+                if (MOVEACTION.equals(command)) {
                     xCoor += 1;
+                    marsRoverPosition.setxCoor(xCoor);
                 }
             }
         }
-        return String.valueOf(xCoor) + String.valueOf(yCoor) + direc;
+//        return String.valueOf(xCoor) + String.valueOf(yCoor) + direc;
+        return marsRoverPosition.toString();
     }
 
     private boolean isDirCommand(String command) {
-        if ("RL".contains(command)) {
+        if (TURNACTION.contains(command)) {
             return true;
         }
         return false;
     }
 
     public String turnDirec(String initDir, String turnAction) {
-        if (initDir.equals("N")) {
-            if ("R".equals(turnAction)) {
-                return "E";
+        if (initDir.equals(NORTH)) {
+            if (RIGHT.equals(turnAction)) {
+                return EAST;
             }
-            if ("L".equals(turnAction)) {
-                return "W";
-            }
-        }
-        if (initDir.equals("S")) {
-            if ("R".equals(turnAction)) {
-                return "W";
-            }
-            if ("L".equals(turnAction)) {
-                return "E";
+            if (LEFT.equals(turnAction)) {
+                return WEST;
             }
         }
-        if (initDir.equals("W")) {
-            if ("R".equals(turnAction)) {
-                return "N";
+        if (initDir.equals(SOUTH)) {
+            if (RIGHT.equals(turnAction)) {
+                return WEST;
             }
-            if ("L".equals(turnAction)) {
-                return "S";
+            if (LEFT.equals(turnAction)) {
+                return EAST;
             }
         }
-        if (initDir.equals("E")) {
-            if ("R".equals(turnAction)) {
-                return "S";
+        if (initDir.equals(WEST)) {
+            if (RIGHT.equals(turnAction)) {
+                return NORTH;
             }
-            if ("L".equals(turnAction)) {
-                return "N";
+            if (LEFT.equals(turnAction)) {
+                return SOUTH;
+            }
+        }
+        if (initDir.equals(EAST)) {
+            if (RIGHT.equals(turnAction)) {
+                return SOUTH;
+            }
+            if (LEFT.equals(turnAction)) {
+                return NORTH;
             }
         }
         return null;
