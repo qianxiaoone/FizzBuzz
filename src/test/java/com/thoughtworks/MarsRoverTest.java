@@ -24,7 +24,14 @@ public class MarsRoverTest {
 
     }
     @Test
-    public void should_return_00E_when_input_00N_R(){}
+    public void should_return_00E_when_input_00N_R(){
+        //given
+        MarsRover marsRover = new MarsRover();
+        //when
+        String location = marsRover.execute("00N", "R");
+        //then
+        Assert.assertEquals("00E",location);
+    }
     @Test
     public void should_return_0n1S_when_input_00S_M(){}
     @Test
