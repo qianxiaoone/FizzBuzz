@@ -114,5 +114,12 @@ public class MarsRoverTest {
         Assert.assertEquals("00N",location);
     }
     @Test
-    public void should_return_13E_when_input_00N_MMMRM(){}
+    public void should_return_13E_when_input_00N_MMMRM(){
+        //given
+        MarsRover marsRover = new MarsRover();
+        //when
+        String location = marsRover.execute(0,0,"N", "MMMRM");
+        //then
+        Assert.assertEquals("13E",location);
+    }
 }
