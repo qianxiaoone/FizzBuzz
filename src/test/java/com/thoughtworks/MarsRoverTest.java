@@ -14,7 +14,15 @@ public class MarsRoverTest {
         Assert.assertEquals("01N",location);
     }
     @Test
-    public void should_return_00W_when_input_00N_L(){}
+    public void should_return_00W_when_input_00N_L(){
+        //given
+        MarsRover marsRover = new MarsRover();
+        //when
+        String location = marsRover.execute("00N", "L");
+        //then
+        Assert.assertEquals("00W",location);
+
+    }
     @Test
     public void should_return_00E_when_input_00N_R(){}
     @Test
